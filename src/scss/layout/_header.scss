@@ -1,3 +1,6 @@
+// haciendo uso de modernizr, seleccionamos la clase .webp y .no-wepb y 
+// a ambas les asignamos el fondo, es este caso la ruta es en img
+
 .no-wepb .inicio {
     background-image: url(../img/header.jpg);
 }
@@ -6,17 +9,46 @@
     background-image: url(../img/header.webp);
 }
 
+// le asignamos un color al fondo, este sera el mismo color para cualquier clase header
+// o mejor dicho, sera el colo para los headers de cualquier pagina dentro del proyecto
 .header {
     background-color: $first;
     padding: 1rem 0 3rem 0;
 
+    // usamos el amperson para que cuando aparezca la clase header e inicio juntas
+    // puedan ejecutar los estilos
     &.inicio {
+        // alineamos el fondo del header, al centro vertical y horizontal
         background-position: center center;
-        background-size: cover;
 
+        // hacemos que el fondo tome todo el tamano disponible
+        background-size: cover;
 
         @include tablet {
             min-height: 70rem;
         }
+
+        .contenido-header {
+            @include tablet {
+                min-height: 70rem;
+            }
+        }
+    }
+}
+
+.contenido-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+
+    h1 {
+        text-align: left;
+        font-weight: $bold;
+        color: $white;
+        line-height: 2;
+        max-width: 60rem;
+        text-transform: capitalize;
+
     }
 }
