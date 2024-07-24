@@ -5,5 +5,44 @@
 }
 
 .anuncio {
-    background-color: $yellow
+    background-color: lighten($gray, 55);
+    // border: 1px 1px solid darken($black, 185);
+
+    .contenido-anuncio {
+        padding: 2rem;
+    }
+
+    h3 {
+        text-transform: uppercase;
+    }
+
+    h3,
+    p {
+        margin: 0;
+    }
+
+    .price {
+        color: $green;
+        font-weight: $bold;
+    }
+}
+
+.icons-charact {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    flex: 1;
+    display: flex;
+
+    img {
+        flex: 0 0 5rem;
+        margin-right: 1rem;
+    }
+
+    p {
+        font-weight: $black;
+    }
 }
