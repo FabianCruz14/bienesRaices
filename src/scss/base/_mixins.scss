@@ -10,14 +10,32 @@
         @content;
     }
 }
-  
+
 @mixin desktop {
     @media (min-width: #{$desktop}) {
         @content;
     }
 }
+
 @mixin grid($columnas, $espaciado ) {
     display: grid;
     gap: $espaciado;
     grid-template-columns: repeat($columnas, 1fr);
+}
+
+@mixin button($bg-color, $display) {
+    display: $display;
+    background-color: $bg-color;
+    color: $white;
+    font-weight: $bold;
+    text-decoration: none;
+    padding: 1rem 3rem;
+    text-align: center;
+    margin-top: calc($separacion / 2);
+    text-transform: uppercase;
+    font-size: 1.5rem;
+
+    &:hover {
+        background-color: darken($bg-color, 10);
+    }
 }
